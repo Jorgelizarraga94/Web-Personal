@@ -8,7 +8,7 @@ import imagen5 from '../assets/microserv imagenes/microservpaneldecontrol2.jpg'
 import imagen6 from '../assets/microserv imagenes/microservauth.jpg'
 import equilibria from '../assets/equilibria/equilibria.jpg'
 import fiberconnection from '../assets/fiberconnection/fiberconnection.jpg'
-import wungsdle from '../assets/Wungdle/wungsdle.jpg'
+import wungsdle from '../assets/wungdle/wungsdle.jpg'
 import homesolution from '../assets/homesolution/homesolution.jpg'
 import supereliza from '../assets/super/super.jpg'
 
