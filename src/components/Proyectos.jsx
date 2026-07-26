@@ -10,7 +10,7 @@ import fiberconnection from '../assets/fiberconnection/fiberconnection.jpg'
 import wungsdle from '../assets/wungdle/wungsdle.jpg'
 import homesolution from '../assets/homesolution/homesolution.jpg'
 import supereliza from '../assets/super/super.jpg'
-import equilibria from '../assets/equilibria/equilibria.jpg'
+
 
 const proyectosData = [
   {
