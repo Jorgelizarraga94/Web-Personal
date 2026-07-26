@@ -4,11 +4,11 @@ import '../index.css';
 const Menu = () => {
   return (
     <aside className="vertical-menu">
-      <nav className="menu-nav w-100 h-50">
-        <ul className="list-unstyled mb-0 d-flex flex-row flex-lg-column justify-content-around justify-content-lg-start align-items-center align-items-lg-stretch h-100 p-0">
+      <nav className="menu-nav w-100 h-100">
+        <ul className="list-unstyled mb-0 d-flex flex-row flex-lg-column justify-content-around justify-content-lg-start align-items-center h-100 p-0 m-0">
           
-          <li className="flex-fill flex-lg-grow-0">
-            <a href="#inicio" className="menu-item d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
+          <li className="menu-li">
+            <a href="#inicio" className="menu-item d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
               <span className="menu-icon text-center" style={{ width: '24px' }}>
                 <i className="fas fa-home"></i>
               </span>
@@ -16,8 +16,8 @@ const Menu = () => {
             </a>
           </li>
 
-          <li className="flex-fill flex-lg-grow-0">
-            <a href="#habilidades" className="menu-item d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
+          <li className="menu-li">
+            <a href="#habilidades" className="menu-item d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
               <span className="menu-icon text-center" style={{ width: '24px' }}>
                 <i className="fas fa-code"></i>
               </span>
@@ -25,8 +25,8 @@ const Menu = () => {
             </a>
           </li>
 
-          <li className="flex-fill flex-lg-grow-0">
-            <a href="#educacion" className="menu-item d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
+          <li className="menu-li">
+            <a href="#educacion" className="menu-item d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
               <span className="menu-icon text-center" style={{ width: '24px' }}>
                 <i className="fas fa-graduation-cap"></i>
               </span>
@@ -34,8 +34,8 @@ const Menu = () => {
             </a>
           </li>
 
-          <li className="flex-fill flex-lg-grow-0">
-            <a href="#proyectos" className="menu-item d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
+          <li className="menu-li">
+            <a href="#proyectos" className="menu-item d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
               <span className="menu-icon text-center" style={{ width: '24px' }}>
                 <i className="fas fa-folder-open"></i>
               </span>
@@ -43,8 +43,8 @@ const Menu = () => {
             </a>
           </li>
 
-          <li className="flex-fill flex-lg-grow-0">
-            <a href="#contacto" className="menu-item d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
+          <li className="menu-li">
+            <a href="#contacto" className="menu-item d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-2 p-2">
               <span className="menu-icon text-center" style={{ width: '24px' }}>
                 <i className="fas fa-envelope"></i>
               </span>

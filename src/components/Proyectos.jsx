@@ -212,7 +212,7 @@ export const Proyectos = () => {
                           GitHub
                         </a>
                         {proyecto.sitio && (
-                          <a href={proyecto.sitio} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary w-50 btn-web">
+                          <a href={proyecto.sitio} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-light w-50 btn-web">
                             Sitio Web
                           </a>
                         )}
