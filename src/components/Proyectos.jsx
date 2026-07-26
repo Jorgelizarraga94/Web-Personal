@@ -6,11 +6,11 @@ import imagen3 from '../assets/microservimagenes/microservcarrito.jpg'
 import imagen4 from '../assets/microservimagenes/microservpaneldecontrol.jpg'
 import imagen5 from '../assets/microservimagenes/microservpaneldecontrol2.jpg'
 import imagen6 from '../assets/microservimagenes/microservauth.jpg'
-import equilibria from '../assets/equilibria/equilibria.jpg'
 import fiberconnection from '../assets/fiberconnection/fiberconnection.jpg'
 import wungsdle from '../assets/wungdle/wungsdle.jpg'
 import homesolution from '../assets/homesolution/homesolution.jpg'
 import supereliza from '../assets/super/super.jpg'
+import equilibria from '../assets/equilibria/equilibria.jpg'
 
 const proyectosData = [
   {
