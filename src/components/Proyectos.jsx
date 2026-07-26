@@ -108,7 +108,6 @@ export const Proyectos = () => {
     });
   };
 
-  // Funciones para el Modal Lightbox con carrusel ampliado
   const openModal = (imagenes, index) => {
     setModalData({ imagenes, index });
   };
@@ -157,8 +156,7 @@ export const Proyectos = () => {
                 <div className="image-overlay">
                     <span>🔍 Ampliar galería</span>
                 </div>
-
-                {/* Botones de navegación (solo si hay más de una foto) */}
+                
                 {totalImages > 1 && (
                   <>
                     <button 
