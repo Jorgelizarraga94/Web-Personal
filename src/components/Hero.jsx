@@ -16,36 +16,36 @@ export default function Hero() {
   const telefono = "+5491165258342";
 
   return (
-    <section className="py-5 text-light d-flex justify-content-center align-items-center" style={{ backgroundColor: '#0a0a0a', minHeight: '90vh' }}>
-      <div className="container py-4">
+    <section className="py-4 py-md-5 text-light d-flex justify-content-center align-items-center" style={{ backgroundColor: '#0a0a0a', minHeight: '90vh' }}>
+      <div className="container py-3 px-3">
         {/* Alineados desde arriba para mantener simetría */}
-        <div className="row align-items-start gy-4">
+        <div className="row align-items-center gy-5">
           
           {/* --- Columna de Texto (Izquierda) --- */}
-          <div className="col-lg-7 text-center text-lg-start pt-lg-2">
+          <div className="col-lg-7 text-center text-lg-start">
             
             {/* Subtítulo superior */}
-            <p className="fs-3 text-light opacity-75 mb-2">
+            <p className="fs-5 fs-md-3 text-light opacity-75 mb-2">
               ¡Hola! Soy <span className="text-purple-custom fw-bold">Jorge</span>
             </p>
 
-            {/* Título Principal */}
-            <h1 className="display-3 fw-bold lh-1 mb-3 text-white">
+            {/* Título Principal (Responsivo para evitar saltos bruscos) */}
+            <h1 className="fw-bold lh-1 mb-3 text-white" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)' }}>
               Desarrollador <br />
               <span className="text-purple-custom">Back-end</span> <br />
             </h1>
 
-            {/* Descripción limpia */}
-            <p className="fs-6 text-light opacity-75 mb-4" style={{ maxWidth: '600px', lineHeight: '1.6' }}>
+            {/* Descripción limpia y adaptada */}
+            <p className="fs-6 text-light opacity-75 mb-4 mx-auto mx-lg-0" style={{ maxWidth: '600px', lineHeight: '1.6' }}>
               Estudiante de la licenciatura en sistemas. Me especializo en el ecosistema <strong className="text-white fw-bold">Java</strong> con <strong className="text-white fw-bold">Spring Boot</strong>, diseñando e implementando <strong>APIs RESTful</strong> robustas y migrando hacia enfoques de arquitectura de microservicios. Complemento mi perfil técnico con un manejo sólido de persistencia de datos mediante <strong className="text-white fw-bold">Hibernate y JPA</strong>, bases de datos <strong>SQL</strong>, y herramientas modernas de infraestructura, testing y control de versiones como <strong>Docker, Postman y Git</strong>.
             </p>
 
             {/* --- Botones de Redes y Contacto --- */}
-            <div className="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 position-relative">
+            <div className="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 position-relative flex-wrap">
               
-              {/* LinkedIn */}
+              {/* LinkedIn (Corregido el enlace) */}
               <a 
-                href="https://github.com/Jorgelizarraga94" 
+                href="https://www.linkedin.com/in/jorgelizarragadev/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-dark border border-secondary text-light d-flex align-items-center justify-content-center"
@@ -55,9 +55,9 @@ export default function Hero() {
                 <i className="fa-brands fa-linkedin-in fs-5"></i>
               </a>
 
-              {/* GitHub */}
+              {/* GitHub (Corregido el enlace) */}
               <a 
-                href="https://www.linkedin.com/in/jorgelizarragadev/" 
+                href="https://github.com/Jorgelizarraga94" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-dark border border-secondary text-light d-flex align-items-center justify-content-center"
@@ -115,8 +115,8 @@ export default function Hero() {
             <div 
               className="position-absolute rounded-circle" 
               style={{
-                width: '300px',
-                height: '300px',
+                width: '260px',
+                height: '260px',
                 backgroundColor: 'rgba(139, 92, 246, 0.15)',
                 filter: 'blur(50px)',
                 zIndex: 0,
@@ -125,7 +125,7 @@ export default function Hero() {
             ></div>
             
             {/* Contenedor del Avatar */}
-            <div className="custom-card p-4 rounded-4 text-center position-relative shadow-lg overflow-hidden" style={{ width: '100%', maxWidth: '450px' }}>
+            <div className="custom-card p-3 p-md-4 rounded-4 text-center position-relative shadow-lg overflow-hidden w-100" style={{ maxWidth: '400px' }}>
               <img 
                 src={avatar} 
                 alt="Avatar 3D Desarrollador" 

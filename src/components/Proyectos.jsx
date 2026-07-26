@@ -12,12 +12,10 @@ import homesolution from '../assets/homesolution/homesolution.jpg'
 import supereliza from '../assets/super/super.jpg'
 import equilibria from '../assets/equilibria/equilibria.jpg'
 
-
 const proyectosData = [
   {
     id: 1,
     titulo: 'Microserv E-Commerce',
-    // Ahora usamos un array de imágenes para cada proyecto
     imagenes: [
       imagen,
       imagen2,
@@ -27,7 +25,7 @@ const proyectosData = [
       imagen6
     ],
     descripcion: 'E-Commerce realizada con Java y Spring boot, utilizando Arquitectura de microservicios, Autentificación con Auth0 y JWT y Sistemas de roles',
-    tech: ['Java', 'Spring Boot', 'Auth0', 'JWT', 'Microservicios', 'SQL' , 'Docker'],
+    tech: ['Java', 'Spring Boot', 'Auth0', 'JWT', 'Microservicios', 'SQL', 'Docker'],
     github: 'https://github.com/Jorgelizarraga94/Microserv',
     sitio: 'https://micro-serv-front-end-react.vercel.app/'
   },
@@ -40,8 +38,7 @@ const proyectosData = [
     descripcion: 'Aplicación de escritorio desarrollada en Java, diseñada para resolver el problema de conformación de equipos de trabajo óptimos dentro de una Software Factory. El objetivo principal es maximizar la suma total de las calificaciones del equipo resultante, cumpliendo estrictamente con los requerimientos de roles y evitando incorporar personas incompatibles entre sí.',
     tech: ['java', 'Swing', 'JUnit', 'base de datos'],
     github: 'https://github.com/Jorgelizarraga94/Equilibria'
-  }
-  ,
+  },
   {
     id: 3,
     titulo: 'FiberConnection',
@@ -85,12 +82,9 @@ const proyectosData = [
 ];
 
 export const Proyectos = () => {
-  // Estado para llevar el control del índice de la imagen actual por cada proyecto (guardando el ID del proyecto y el índice)
   const [currentImageIndexes, setCurrentImageIndexes] = useState({});
-  // Estado para el modal de pantalla completa (guarda el array de imágenes y el índice activo)
   const [modalData, setModalData] = useState(null);
 
-  // Funciones para pasar las fotos en la tarjeta
   const nextImage = (projectId, totalImages, e) => {
     e.stopPropagation();
     setCurrentImageIndexes(prev => {
@@ -134,106 +128,130 @@ export const Proyectos = () => {
   };
 
   return (
-    <section id="proyectos" className="proyectos-container">
-      <h2 className='tech-stack-title text-center mb-4 mt-2 fw-bold fs-3 text-light opacity-75 mb-2'>Mis Proyectos</h2>
-      <div className="projects-grid">
-        {proyectosData.map((proyecto) => {
-          const activeIndex = currentImageIndexes[proyecto.id] || 0;
-          const totalImages = proyecto.imagenes.length;
+    <section id="proyectos" className="proyectos-container py-4 py-md-5">
+      <div className="container px-3">
+        <h2 className="tech-stack-title text-center mb-4 mt-2 fw-bold fs-3 text-light opacity-75">
+          Mis Proyectos
+        </h2>
+        
+        <div className="row g-4">
+          {proyectosData.map((proyecto) => {
+            const activeIndex = currentImageIndexes[proyecto.id] || 0;
+            const totalImages = proyecto.imagenes.length;
 
-          return (
-            <div className="project-card" key={proyecto.id}>
-              {/* Contenedor del Carrusel en la Tarjeta */}
-              <div 
-                className="project-image-container" 
-                onClick={() => openModal(proyecto.imagenes, activeIndex)}
-              >
-                <img 
-                  src={proyecto.imagenes[activeIndex]} 
-                  alt={`Captura ${activeIndex + 1} de ${proyecto.titulo}`} 
-                  className="project-thumbnail"
-                />
-                
-                <div className="image-overlay">
-                    <span>🔍 Ampliar galería</span>
-                </div>
-
-                {totalImages > 1 && (
-                  <>
-                    <button 
-                      className="carousel-btn prev-btn" 
-                      onClick={(e) => prevImage(proyecto.id, totalImages, e)}
-                    >
-                      &#10094;
-                    </button>
-                    <button 
-                      className="carousel-btn next-btn" 
-                      onClick={(e) => nextImage(proyecto.id, totalImages, e)}
-                    >
-                      &#10095;
-                    </button>
-
-                    {/* Indicadores de puntos */}
-                    <div className="carousel-dots">
-                      {proyecto.imagenes.map((_, idx) => (
-                        <span 
-                          key={idx} 
-                          className={`dot ${idx === activeIndex ? 'active' : ''}`}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setCurrentImageIndexes(prev => ({ ...prev, [proyecto.id]: idx }));
-                          }}
-                        />
-                      ))}
+            return (
+              <div className="col-12 col-md-6 col-lg-4 d-flex" key={proyecto.id}>
+                <div className="project-card w-100 d-flex flex-column justify-content-between h-100">
+                  
+                  {/* Contenedor del Carrusel en la Tarjeta */}
+                  <div 
+                    className="project-image-container position-relative overflow-hidden" 
+                    onClick={() => openModal(proyecto.imagenes, activeIndex)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <img 
+                      src={proyecto.imagenes[activeIndex]} 
+                      alt={`Captura ${activeIndex + 1} de ${proyecto.titulo}`} 
+                      className="project-thumbnail w-100 object-fit-cover"
+                      style={{ height: '200px' }}
+                    />
+                    
+                    <div className="image-overlay">
+                      <span>🔍 Ampliar galería</span>
                     </div>
-                  </>
-                )}
-              </div>
-              
-              <div className="project-info">
-                <h3>{proyecto.titulo}</h3>
-                <p>{proyecto.descripcion}</p>
-                
-                <div className="tech-stack">
-                  {proyecto.tech.map((t, index) => (
-                    <span key={index}>{t}</span>
-                  ))}
-                </div>
-                
-                <div className="proyecto-links">
-                    <a href={proyecto.github} target="_blank" rel="noopener noreferrer" className="btn-github">GitHub</a>
-                    <a href={proyecto.sitio} target="_blank" rel="noopener noreferrer" className="btn-web">Sitio Web</a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
 
-      {/* MODAL / LIGHTBOX CON CARRUSEL */}
-      {modalData && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <span className="modal-close" onClick={closeModal}>&times;</span>
-          
-          <div className="modal-content-wrapper" onClick={(e) => e.stopPropagation()}>
-            <img 
-              src={modalData.imagenes[modalData.index]} 
-              alt="Vista ampliada" 
-              className="modal-image" 
-            />
+                    {totalImages > 1 && (
+                      <>
+                        <button 
+                          className="carousel-btn prev-btn" 
+                          onClick={(e) => prevImage(proyecto.id, totalImages, e)}
+                        >
+                          &#10094;
+                        </button>
+                        <button 
+                          className="carousel-btn next-btn" 
+                          onClick={(e) => nextImage(proyecto.id, totalImages, e)}
+                        >
+                          &#10095;
+                        </button>
 
-            {modalData.imagenes.length > 1 && (
-              <>
-                <button className="modal-nav prev" onClick={modalPrev}>&#10094;</button>
-                <button className="modal-nav next" onClick={modalNext}>&#10095;</button>
-                <div className="modal-counter">
-                  {modalData.index + 1} / {modalData.imagenes.length}
+                        {/* Indicadores de puntos */}
+                        <div className="carousel-dots">
+                          {proyecto.imagenes.map((_, idx) => (
+                            <span 
+                              key={idx} 
+                              className={`dot ${idx === activeIndex ? 'active' : ''}`}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setCurrentImageIndexes(prev => ({ ...prev, [proyecto.id]: idx }));
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  
+                  <div className="project-info p-3 d-flex flex-column flex-grow-1 justify-content-between">
+                    <div>
+                      <h3 className="fs-5 text-light fw-bold mb-2">{proyecto.titulo}</h3>
+                      <p className="small text-secondary mb-3">{proyecto.descripcion}</p>
+                    </div>
+                    
+                    <div>
+                      <div className="tech-stack d-flex flex-wrap gap-1 mb-3">
+                        {proyecto.tech.map((t, index) => (
+                          <span key={index} className="badge bg-dark border border-secondary text-light small">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="proyecto-links d-flex gap-2">
+                        <a href={proyecto.github} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-light w-15 btn-github">
+                          GitHub
+                        </a>
+                        {proyecto.sitio && (
+                          <a href={proyecto.sitio} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary w-50 btn-web">
+                            Sitio Web
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-              </>
-            )}
-          </div>
+              </div>
+            );
+          })}
         </div>
-      )}
+
+        {/* MODAL / LIGHTBOX CON CARRUSEL */}
+        {modalData && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <span className="modal-close" onClick={closeModal}>&times;</span>
+            
+            <div className="modal-content-wrapper position-relative" onClick={(e) => e.stopPropagation()}>
+              <img 
+                src={modalData.imagenes[modalData.index]} 
+                alt="Vista ampliada" 
+                className="modal-image img-fluid rounded" 
+              />
+
+              {modalData.imagenes.length > 1 && (
+                <>
+                  <button className="modal-nav prev" onClick={modalPrev}>&#10094;</button>
+                  <button className="modal-nav next" onClick={modalNext}>&#10095;</button>
+                  <div className="modal-counter text-light text-center mt-2">
+                    {modalData.index + 1} / {modalData.imagenes.length}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+
+      </div>
     </section>
   );
 };

@@ -14,18 +14,18 @@ const technologies = [
 
 export default function Stack() {
   return (
-    <section className="tech-stack-section py-3">
-      <div className="container">
-        <h3 className="tech-stack-title text-center mb-4 mt-2 fw-bold fs-3 text-light opacity-75 mb-2">
+    <section className="tech-stack-section py-4 py-md-5" id="habilidades">
+      <div className="container px-3">
+        <h3 className="tech-stack-title text-center mb-4 mt-2 fw-bold fs-3 text-light opacity-75">
           Habilidades
         </h3>
         
         <div className="row g-3 justify-content-center">
           {technologies.map((tech, index) => (
-            <div key={index} className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <div className="tech-card">
-                <i className={`${tech.icon} tech-icon`}></i>
-                <span className="tech-name fw-bold">{tech.name}</span>
+            <div key={index} className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex">
+              <div className="tech-card w-100 d-flex flex-column align-items-center justify-content-center p-3 text-center h-100">
+                <i className={`${tech.icon} tech-icon fs-2 mb-2`}></i>
+                <span className="tech-name fw-bold small">{tech.name}</span>
               </div>
             </div>
           ))}
