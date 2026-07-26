@@ -1,46 +1,110 @@
-import React from 'react';
+import React, { useState } from 'react';
 import avatar from '../assets/avatar.png';
 
 export default function Hero() {
+  const [copiado, setCopiado] = useState(null);
+
+  const copiarAlPortapapeles = (texto, tipo) => {
+    navigator.clipboard.writeText(texto);
+    setCopiado(tipo);
+    setTimeout(() => {
+      setCopiado(null);
+    }, 2000);
+  };
+
+  const email = "jorgelizarraga1994@gmail.com";
+  const telefono = "+5491165258342";
+
   return (
-    <section className="min-vh-100 d-flex align-items-center py-5">
-      <div className="container">
+    <section className="py-5 text-light d-flex justify-content-center align-items-center" style={{ backgroundColor: '#0a0a0a', minHeight: '90vh' }}>
+      <div className="container py-4">
         {/* Alineados desde arriba para mantener simetría */}
-        <div className="row align-items-start gy-5">
+        <div className="row align-items-start gy-4">
           
           {/* --- Columna de Texto (Izquierda) --- */}
-          <div className="col-lg-7 text-center text-lg-start pt-lg-4">
+          <div className="col-lg-7 text-center text-lg-start pt-lg-2">
             
-            {/* Subtítulo superior - Con mejor opacidad para mayor contraste */}
-            <p className="fs-3 text-light opacity-75 mb-3">
+            {/* Subtítulo superior */}
+            <p className="fs-3 text-light opacity-75 mb-2">
               ¡Hola! Soy <span className="text-purple-custom fw-bold">Jorge</span>
             </p>
 
             {/* Título Principal */}
-            <h1 className="display-3 fw-bold lh-1 mb-4 text-white">
+            <h1 className="display-3 fw-bold lh-1 mb-3 text-white">
               Desarrollador <br />
               <span className="text-purple-custom">Back-end</span> <br />
             </h1>
 
-            {/* Descripción - Texto claro y nítido para accesibilidad */}
-            <p className="text-light fs-6 mb-5 mx-auto mx-lg-0 opacity-85" style={{ maxWidth: '600px', lineHeight: '1.6' }}>
-              Estudiante de la Tecnicatura Universitaria en Informática. Me especializo en el ecosistema <strong className="text-white fw-bold">Java</strong> con <strong className="text-white fw-bold">Spring Boot</strong>, diseñando arquitecturas de microservicios y asegurando la persistencia de datos con <strong className="text-white fw-bold">Hibernate/JPA</strong> y bases de datos <strong className="text-white fw-bold">SQL</strong>.
+            {/* Descripción limpia */}
+            <p className="fs-6 text-light opacity-75 mb-4" style={{ maxWidth: '600px', lineHeight: '1.6' }}>
+              Estudiante de la licenciatura en sistemas. Me especializo en el ecosistema <strong className="text-white fw-bold">Java</strong> con <strong className="text-white fw-bold">Spring Boot</strong>, diseñando e implementando <strong>APIs RESTful</strong> robustas y migrando hacia enfoques de arquitectura de microservicios. Complemento mi perfil técnico con un manejo sólido de persistencia de datos mediante <strong className="text-white fw-bold">Hibernate y JPA</strong>, bases de datos <strong>SQL</strong>, y herramientas modernas de infraestructura, testing y control de versiones como <strong>Docker, Postman y Git</strong>.
             </p>
-            
-            {/* Botones de acción */}
-            <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start align-items-center">
+
+            {/* --- Botones de Redes y Contacto --- */}
+            <div className="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 position-relative">
+              
+              {/* LinkedIn */}
               <a 
-                href="#projects" 
-                className="btn btn-purple-custom rounded-pill px-4 py-3 fw-semibold shadow"
+                href="https://github.com/Jorgelizarraga94" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-dark border border-secondary text-light d-flex align-items-center justify-content-center"
+                style={{ width: '42px', height: '42px', borderRadius: '8px' }}
+                title="LinkedIn"
               >
-                Ver Mis Proyectos
+                <i className="fa-brands fa-linkedin-in fs-5"></i>
               </a>
+
+              {/* GitHub */}
               <a 
-                href="#contact" 
-                className="btn btn-outline-light rounded-pill px-4 py-3 fw-semibold"
+                href="https://www.linkedin.com/in/jorgelizarragadev/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-dark border border-secondary text-light d-flex align-items-center justify-content-center"
+                style={{ width: '42px', height: '42px', borderRadius: '8px' }}
+                title="GitHub"
               >
-                Contáctame
+                <i className="fa-brands fa-github fs-5"></i>
               </a>
+
+              {/* Email (Copia al portapapeles) */}
+              <button 
+                onClick={() => copiarAlPortapapeles(email, 'email')} 
+                className="btn btn-dark border border-secondary text-light d-flex align-items-center justify-content-center position-relative"
+                style={{ width: '42px', height: '42px', borderRadius: '8px' }}
+                title="Copiar Email"
+              >
+                {copiado === 'email' ? (
+                  <i className="fa-solid fa-check fs-5 text-success"></i>
+                ) : (
+                  <i className="fa-solid fa-envelope fs-5"></i>
+                )}
+              </button>
+
+              {/* Teléfono (Copia al portapapeles) */}
+              <button 
+                onClick={() => copiarAlPortapapeles(telefono, 'telefono')} 
+                className="btn btn-dark border border-secondary text-light d-flex align-items-center justify-content-center position-relative"
+                style={{ width: '42px', height: '42px', borderRadius: '8px' }}
+                title="Copiar Teléfono"
+              >
+                {copiado === 'telefono' ? (
+                  <i className="fa-solid fa-check fs-5 text-success"></i>
+                ) : (
+                  <i className="fa-solid fa-phone fs-5"></i>
+                )}
+              </button>
+
+              {/* Tooltip flotante de aviso */}
+              {copiado && (
+                <span 
+                  className="position-absolute bg-success text-white px-2 py-1 rounded small fw-medium shadow"
+                  style={{ bottom: '-35px', left: '0', fontSize: '0.75rem', zIndex: 10 }}
+                >
+                  {copiado === 'email' ? '¡Email copiado!' : '¡Teléfono copiado!'}
+                </span>
+              )}
+
             </div>
 
           </div>
