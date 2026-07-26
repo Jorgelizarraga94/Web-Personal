@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import '../index.css';
-import imagen from '../assets/microserv imagenes/microservprincipal.jpg'
-import imagen2 from '../assets/microserv imagenes/microservmis compras.jpg'
-import imagen3 from '../assets/microserv imagenes/microservcarrito.jpg'
-import imagen4 from '../assets/microserv imagenes/microservpaneldecontrol.jpg'
-import imagen5 from '../assets/microserv imagenes/microservpaneldecontrol2.jpg'
-import imagen6 from '../assets/microserv imagenes/microservauth.jpg'
+import imagen from '../assets/microservimagenes/microservprincipal.jpg'
+import imagen2 from '../assets/microservimagenes/microservmiscompras.jpg'
+import imagen3 from '../assets/microservimagenes/microservcarrito.jpg'
+import imagen4 from '../assets/microservimagenes/microservpaneldecontrol.jpg'
+import imagen5 from '../assets/microservimagenes/microservpaneldecontrol2.jpg'
+import imagen6 from '../assets/microservimagenes/microservauth.jpg'
 import equilibria from '../assets/equilibria/equilibria.jpg'
 import fiberconnection from '../assets/fiberconnection/fiberconnection.jpg'
 import wungsdle from '../assets/wungdle/wungsdle.jpg'
