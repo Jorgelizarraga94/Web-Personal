@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import '../index.css';
-import imagen from '../assets/microserv imagenes/microserv principal.jpg'
-import imagen2 from '../assets/microserv imagenes/microserv mis compras.jpg'
-import imagen3 from '../assets/microserv imagenes/microserv carrito.jpg'
-import imagen4 from '../assets/microserv imagenes/microserv panel de control.jpg'
-import imagen5 from '../assets/microserv imagenes/microserv panel de control2.jpg'
-import imagen6 from '../assets/microserv imagenes/microserv Auth.jpg'
+import imagen from '../assets/microserv imagenes/microservprincipal.jpg'
+import imagen2 from '../assets/microserv imagenes/microservmis compras.jpg'
+import imagen3 from '../assets/microserv imagenes/microservcarrito.jpg'
+import imagen4 from '../assets/microserv imagenes/microservpaneldecontrol.jpg'
+import imagen5 from '../assets/microserv imagenes/microservpaneldecontrol2.jpg'
+import imagen6 from '../assets/microserv imagenes/microservauth.jpg'
 import equilibria from '../assets/equilibria/equilibria.jpg'
-import fiberconnection from '../assets/fiberconnection/fiber connection.jpg'
+import fiberconnection from '../assets/fiberconnection/fiberconnection.jpg'
 import wungsdle from '../assets/Wungdle/wungsdle.jpg'
 import homesolution from '../assets/homesolution/homesolution.jpg'
 import supereliza from '../assets/super/super.jpg'
@@ -156,7 +156,7 @@ export const Proyectos = () => {
                 <div className="image-overlay">
                     <span>🔍 Ampliar galería</span>
                 </div>
-                
+
                 {totalImages > 1 && (
                   <>
                     <button 
