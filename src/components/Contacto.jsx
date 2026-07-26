@@ -43,7 +43,7 @@ const Contacto = () => {
           <label>Nombre</label>
           <input 
             type="text" 
-            name="user_name" 
+            name="nombre" 
             required 
             placeholder="Tu nombre" 
           />
@@ -53,7 +53,7 @@ const Contacto = () => {
           <label>Email</label>
           <input 
             type="email" 
-            name="user_email" 
+            name="email" 
             required 
             placeholder="tucorreo@email.com" 
           />
