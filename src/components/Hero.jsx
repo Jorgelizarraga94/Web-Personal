@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import avatar from '../assets/avatar.png';
+import cv from '../assets/jorgelizarragacv.pdf'
 
 export default function Hero() {
   const [copiado, setCopiado] = useState(null);
@@ -94,6 +95,15 @@ export default function Hero() {
                   <i className="fa-solid fa-phone fs-5"></i>
                 )}
               </button>
+
+              <a 
+                href={cv}
+                download='jorgelizarragacv'
+                className="btn btn-dark border border-secondary text-light d-flex align-items-center justify-content-center position-relative"
+                style={{ width: '130px', height: '42px', borderRadius: '8px' }}
+              >
+                Descargar CV
+              </a>
 
               {/* Tooltip flotante de aviso */}
               {copiado && (
