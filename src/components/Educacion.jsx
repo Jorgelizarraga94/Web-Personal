@@ -58,7 +58,7 @@ export default function Education() {
                 <h5 className="text-light fw-bold mb-0 fs-5 fs-md-4">{item.degree}</h5>
                 <span className="badge bg-dark border border-secondary text-pink align-self-start align-self-md-auto">{item.period}</span>
               </div>
-              <h6 className="text-muted mb-2 fs-6">{item.institution}</h6>
+              <h6 className="text-light mb-2 fs-6">{item.institution}</h6>
               <p className="text-secondary small mb-0">{item.description}</p>
             </div>
           ))}
@@ -75,7 +75,7 @@ export default function Education() {
                     <h6 className="text-light fw-bold mb-0 fs-6">{item.degree}</h6>
                     <span className="badge bg-dark border border-secondary text-pink small flex-shrink-0">{item.period}</span>
                   </div>
-                  <p className="text-muted small mb-2">{item.institution}</p>
+                  <p className="text-light small mb-2">{item.institution}</p>
                 </div>
                 <p className="text-secondary small mb-0" style={{ fontSize: '0.82rem' }}>{item.description}</p>
               </div>
